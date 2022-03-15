@@ -266,4 +266,65 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
     return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }
 
+void	*memchr(const void *s, int c, size_t n)
+{
+    size_t	i;
+    unsigned char	n_c;
+    unsigned char	*ptr;
+
+    i = 0;
+    n_c = (unsigned char)c;
+    ptr = (unsigned char*)s;
+    while (i < n)
+    {
+	if (ptr[i] == n_c)
+	    return ((void *)ptr + i);
+	i++;
+    }
+    return ((void *)0);
+}
+
+int	memcmp(const void *s1, const void *s2, size_t n)
+{
+    size_t		i;
+    unsigned char	*tmp1;
+    unsigned char	*tmp2;
+
+    i = 0;
+    tmp1 = (unsigned char*)s1;
+    tmp2 = (unsigned char*)s2;
+    while (i < n)
+    {
+	if (tmp1[i] != tmp2[i])
+	    return (tmp1[i] - tmp2[i]);
+	i++;
+    }
+    return (0);
+}
+
+char	*strnstr(const char *haystack, const char *needle, size_t len)
+{
+    size_t	i;
+    size_t	tmp;
+
+    i = 0;
+    while (haystack[i] != '\0' && i < len)
+    {
+	tmp = 0;
+	if (needle[tmp] == haystack[i + tmp])
+	{
+	    while (needle[tmp] != '\0' && haystack[i + tmp] != '\0')
+	    {
+		if ((needle[tmp] != haystack[i + tmp]) || (i + tmp >= len))
+		    break;
+		tmp++;
+	    }
+	    if (needle[tmp] == '\0')
+		return (&((char*)haystack)[i]);
+	}
+	i++;
+    }
+    return (0);
+}
+
 
