@@ -168,7 +168,7 @@ int	str_len(char *str)
 	return (idx);
 }
 
-unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	unsigned int	i;
 	unsigned int	j;
@@ -182,7 +182,7 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 	s_len = str_len(src);
 	if (size <= d_len)
 		return (s_len + size);
-	while (src[i] != '\0' && i + 1 + d_len < size)
+	while (src[i] != '\0' && i + 1 + d_len < dstsize)
 	{
 		dest[j] = src[i];
 		i++;
@@ -191,3 +191,79 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 	dest[j] = '\0';
 	return (d_len + s_len);
 }
+
+int	ft_toupper(int c)
+{
+    if (c >= 'a' && c <= 'z')
+    {
+	c = c - 'a' + 'A';
+    }
+    return (c);
+}
+
+int	ft_tolower(int c)
+{
+    if (c >= 'A' && c <= 'Z')
+    {
+	c = c - 'A' + 'a';
+    }
+    return (c);
+}
+
+char	*strchr(const char *s, int c)
+{
+    int		i;
+    char	t_c;
+    char	*t_s;
+
+    i = 0;
+    t_c = (char)c;
+    t_s = (char*)s;
+    while (t_s[i] != t_c)
+    {
+	if (t_s[i] == '\0')
+	    return (0);
+	i++;
+    }
+    return (&t_s[i]);
+}
+
+char	*ft_strrchr(const char *s, int c)
+{
+    int		i;
+    char	t_c;
+    char	*t_s;
+
+    i = 0;
+    t_c = (char)c;
+    t_s = (char*)s;
+    while (t_s[i] != '\0')
+	i++;
+
+    i -= 1;
+    while (i >= 0)
+    {
+	if (t_s[i] == t_c)
+	    return (&t_s[i]);
+	i--;
+    }
+    return (0);
+}
+
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
+{
+    size_t	i;
+
+    i = 0;
+    while (s1[i] && s2[i] && i < n)
+    {
+	if (s1[i] != s2[i])
+	    break;
+	i++;
+    }
+    if (i == n)
+	return (0);
+    return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+}
+
+
