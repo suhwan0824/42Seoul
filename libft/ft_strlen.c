@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: suhyoon <suhyoon@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/10 17:11:13 by suhyoon           #+#    #+#             */
-/*   Updated: 2022/03/10 17:11:41 by suhyoon          ###   ########.fr       */
+/*   Created: 2022/03/17 18:23:10 by suhyoon           #+#    #+#             */
+/*   Updated: 2022/03/17 18:23:48 by suhyoon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+int	ft_strlen(const char *str)
 {
 	int i;
 

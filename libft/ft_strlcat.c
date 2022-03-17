@@ -6,10 +6,10 @@
 /*   By: suhyoon <suhyoon@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 17:03:23 by suhyoon           #+#    #+#             */
-/*   Updated: 2022/03/17 17:03:31 by suhyoon          ###   ########.fr       */
+/*   Updated: 2022/03/17 17:22:10 by suhyoon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+#include "libft.h" 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	unsigned int	i;
