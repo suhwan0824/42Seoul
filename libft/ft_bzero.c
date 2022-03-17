@@ -1,18 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: suhyoon <suhyoon@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/17 17:00:46 by suhyoon           #+#    #+#             */
-/*   Updated: 2022/03/17 17:00:52 by suhyoon          ###   ########.fr       */
+/*   Created: 2022/03/17 17:02:01 by suhyoon           #+#    #+#             */
+/*   Updated: 2022/03/17 17:02:18 by suhyoon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalnum(int c)
+void	ft_bzero(void *ptr, size_t len)
 {
-	if (ft_isalpha(c) || ft_isalnum(c))
-		return (1);
-	return (0);
+	size_t			i;
+	unsigned char	*tmp;
+
+	i = 0;
+	tmp = (unsigned char*)ptr;
+
+	while (i < len)
+	{
+		tmp[i] = 0;
+		i++;
+	}
 }

@@ -1,18 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: suhyoon <suhyoon@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/17 17:00:46 by suhyoon           #+#    #+#             */
-/*   Updated: 2022/03/17 17:00:52 by suhyoon          ###   ########.fr       */
+/*   Created: 2022/03/17 17:06:45 by suhyoon           #+#    #+#             */
+/*   Updated: 2022/03/17 17:07:24 by suhyoon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalnum(int c)
+#include <stdlib.h>
+char	*strdup(const char *src)
 {
-	if (ft_isalpha(c) || ft_isalnum(c))
-		return (1);
-	return (0);
+	char	*dest;
+	int		i;
+
+	i = 0;
+	dest = (char *)malloc(sizeof(char) * ft_strlen(src));
+	while (src[i])
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	dest[i] = '\0';
+	if (!dest)
+		return (0);
+	return (dest);
 }

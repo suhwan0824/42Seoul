@@ -1,25 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: suhyoon <suhyoon@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/17 16:59:31 by suhyoon           #+#    #+#             */
-/*   Updated: 2022/03/17 17:00:16 by suhyoon          ###   ########.fr       */
+/*   Created: 2022/03/17 17:02:48 by suhyoon           #+#    #+#             */
+/*   Updated: 2022/03/17 17:02:49 by suhyoon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(int c)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	if (c >= 'a' && c <= 'z')
+	size_t				i;
+	unsigned char		t_dst;
+	const unsigned char	t_src;
+
+	t_dst = (unsigned char*)dst;
+	t_src = (const unsigned char*)src;
+
+	if (t_dst == NULL && t_src == NULL)
+		return (NULL);
+	if (dest < src)
 	{
-		return (1);
-	}
-	else if (c >= 'A' && c <= 'Z')
-	{
-		return (1);
+		i = 0;
+		while (i < len)
+		{
+			t_dst[i] = t_src[i];
+			i++;
+		}
 	}
 	else
-		return (0);
+	{
+		i = len;
+		while (i)
+		{
+			t_dst[i] = t_src[i];
+			i--;
+		}
+	}
+	return (dst);
 }

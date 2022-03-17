@@ -1,18 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: suhyoon <suhyoon@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/17 17:00:46 by suhyoon           #+#    #+#             */
-/*   Updated: 2022/03/17 17:00:52 by suhyoon          ###   ########.fr       */
+/*   Created: 2022/03/17 17:02:30 by suhyoon           #+#    #+#             */
+/*   Updated: 2022/03/17 17:02:32 by suhyoon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalnum(int c)
+void	*ft_memcpy(void dst, const void src, size_t n)
 {
-	if (ft_isalpha(c) || ft_isalnum(c))
-		return (1);
-	return (0);
+	size_t			i;
+	char			tmp_dst;
+	const char		tmp_src;
+
+	i = 0;
+	while (i < n)
+	{
+		tmp_dst[i] = tmp_src[i];
+		i++;
+	}
+	return (dst);
 }

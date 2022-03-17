@@ -6,7 +6,7 @@
 /*   By: suhyoon <suhyoon@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 17:06:55 by suhyoon           #+#    #+#             */
-/*   Updated: 2022/03/15 21:49:18 by suhyoon          ###   ########.fr       */
+/*   Updated: 2022/03/17 16:59:49 by suhyoon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,13 +80,13 @@ void	*ft_memset(void *ptr, int val, size_t len)
 	return (tmp);
 }
 
-void	bzero(void *ptr, size_t len)
+void	ft_bzero(void *ptr, size_t len)
 {
 	size_t			i;
 	unsigned char	*tmp;
 
 	i = 0;
-	tmp = (unsigned char)val;
+	tmp = (unsigned char*)ptr;
 
 	while (i < len)
 	{
@@ -158,16 +158,6 @@ size_t	strlcpy(char *dst, const char *src, size_t dstsize)
 	return (i);
 }
 
-int	str_len(char *str)
-{
-	int	idx;
-
-	idx = 0;
-	while (str[idx] != '\0')
-		idx++;
-	return (idx);
-}
-
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	unsigned int	i;
@@ -177,9 +167,9 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 
 	i = 0;
 	j = 0;
-	d_len = str_len(dest);
+	d_len = ft_strlen(dest);
 	j = d_len;
-	s_len = str_len(src);
+	s_len = ft_strlen(src);
 	if (size <= d_len)
 		return (s_len + size);
 	while (src[i] != '\0' && i + 1 + d_len < dstsize)
@@ -266,7 +256,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
     return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }
 
-void	*memchr(const void *s, int c, size_t n)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
     size_t	i;
     unsigned char	n_c;
@@ -284,7 +274,7 @@ void	*memchr(const void *s, int c, size_t n)
     return ((void *)0);
 }
 
-int	memcmp(const void *s1, const void *s2, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
     size_t		i;
     unsigned char	*tmp1;
@@ -302,7 +292,7 @@ int	memcmp(const void *s1, const void *s2, size_t n)
     return (0);
 }
 
-char	*strnstr(const char *haystack, const char *needle, size_t len)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
     size_t	i;
     size_t	tmp;
@@ -327,4 +317,32 @@ char	*strnstr(const char *haystack, const char *needle, size_t len)
     return (0);
 }
 
+void	*ft_calloc(size_t count, size_t size)
+{
+	size_t	i;
+	void	*ptr;
 
+	ptr = malloc(count * size);
+	if (!ptr)
+		return (0);
+	ft_bzero(ptr, (count * size));
+	return (ptr);
+}
+
+char	*strdup(const char *src)
+{
+	char	*dest;
+	int		i;
+
+	i = 0;
+	dest = (char *)malloc(sizeof(char) * ft_strlen(src));
+	while (src[i])
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	dest[i] = '\0';
+	if (!dest)
+		return (0);
+	return (dest);
+}

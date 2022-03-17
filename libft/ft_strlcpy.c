@@ -1,18 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: suhyoon <suhyoon@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/17 17:00:46 by suhyoon           #+#    #+#             */
-/*   Updated: 2022/03/17 17:00:52 by suhyoon          ###   ########.fr       */
+/*   Created: 2022/03/17 17:02:58 by suhyoon           #+#    #+#             */
+/*   Updated: 2022/03/17 17:03:12 by suhyoon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalnum(int c)
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	if (ft_isalpha(c) || ft_isalnum(c))
-		return (1);
-	return (0);
+	size_t	i;
+
+	i = 0;
+	while (i + 1 < dstsize && src[i] != '\0')
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	dst[i] = '\0';
+	while (src[i] != '\0')
+		i++;
+	return (i);
 }
