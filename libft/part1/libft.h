@@ -6,7 +6,7 @@
 /*   By: suhyoon <suhyoon@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 17:21:05 by suhyoon           #+#    #+#             */
-/*   Updated: 2022/03/17 18:22:36 by suhyoon          ###   ########.fr       */
+/*   Updated: 2022/03/28 14:41:16 by suhyoon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@
 #  define OPEN_MAX 32
 # endif
 
-typedef struct		s_list
+typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
@@ -43,7 +43,7 @@ size_t				ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t				ft_strlcat(char *dst, const char *src, size_t dstsize);
 char				*ft_strchr(const char *s, int c);
 char				*ft_strrchr(const char *s, int c);
-char				*ft_strnstr(const char *haystack, const char *needle, size_t len);
+char				*ft_strnstr(const char *bag, const char *one, size_t len);
 int					ft_strcmp(const char *s1, const char *s2);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
 int					ft_atoi(const char *str);

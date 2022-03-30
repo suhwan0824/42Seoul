@@ -1,20 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: suhyoon <suhyoon@student.42seoul.kr>       +#+  +:+       +#+        */
+/*   By: suhyoon <suhyoon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/17 17:03:39 by suhyoon           #+#    #+#             */
-/*   Updated: 2022/03/17 17:04:13 by suhyoon          ###   ########.fr       */
+/*   Created: 2022/03/17 17:04:58 by suhyoon           #+#    #+#             */
+/*   Updated: 2022/03/28 14:28:40 by suhyoon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_toupper(int c)
+char	*ft_strrchr(const char *s, int c)
 {
-    if (c >= 'a' && c <= 'z')
-    {
-	c = c - 'a' + 'A';
-    }
-    return (c);
+	int		i;
+	char	t_c;
+	char	*t_s;
+
+	i = 0;
+	t_c = (char)c;
+	t_s = (char *)s;
+	while (t_s[i] != '\0')
+		i++;
+	i -= 1;
+	while (i >= 0)
+	{
+		if (t_s[i] == t_c)
+			return (&t_s[i]);
+		i--;
+	}
+	return (0);
 }

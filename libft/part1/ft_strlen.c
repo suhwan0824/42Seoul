@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: suhyoon <suhyoon@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/17 17:02:30 by suhyoon           #+#    #+#             */
-/*   Updated: 2022/03/17 17:02:32 by suhyoon          ###   ########.fr       */
+/*   Created: 2022/03/17 18:23:10 by suhyoon           #+#    #+#             */
+/*   Updated: 2022/03/28 14:19:23 by suhyoon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memcpy(void dst, const void src, size_t n)
+int	ft_strlen(const char *str)
 {
-	size_t			i;
-	char			tmp_dst;
-	const char		tmp_src;
+	int	i;
 
 	i = 0;
-	while (i < n)
+	while (str[i])
 	{
-		tmp_dst[i] = tmp_src[i];
 		i++;
 	}
-	return (dst);
+	return (i);
 }

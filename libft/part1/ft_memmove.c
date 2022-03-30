@@ -1,29 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: suhyoon <suhyoon@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/17 17:04:40 by suhyoon           #+#    #+#             */
-/*   Updated: 2022/03/17 17:04:49 by suhyoon          ###   ########.fr       */
+/*   Created: 2022/03/17 17:02:48 by suhyoon           #+#    #+#             */
+/*   Updated: 2022/03/29 16:41:49 by suhyoon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strchr(const char *s, int c)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-    int		i;
-    char	t_c;
-    char	*t_s;
+	size_t		i;
+	char		*dest;
+	const char	*source;
 
-    i = 0;
-    t_c = (char)c;
-    t_s = (char*)s;
-    while (t_s[i] != t_c)
-    {
-	if (t_s[i] == '\0')
-	    return (0);
-	i++;
-    }
-    return (&t_s[i]);
+	dest = (char *)dst;
+	source = (const char *)src;
+
+	if (dst == src)
+		return (dst);
+	elif (dst < src)
+	{
+		while (len--)
+			*dest++ = *source++;
+	}
+	else
+	{
+		dest += count;
+		source += count;
+		while (len--)
+			*--dest = *--source;
+	}
+	return (dst);
 }

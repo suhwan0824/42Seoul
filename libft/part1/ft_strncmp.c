@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: suhyoon <suhyoon@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/17 17:02:58 by suhyoon           #+#    #+#             */
-/*   Updated: 2022/03/17 17:09:32 by suhyoon          ###   ########.fr       */
+/*   Created: 2022/03/17 17:05:13 by suhyoon           #+#    #+#             */
+/*   Updated: 2022/03/28 14:22:49 by suhyoon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	size_t	i;
 
 	i = 0;
-	while (i + 1 < dstsize && src[i] != '\0')
+	while (s1[i] && s2[i] && i < n)
 	{
-		dst[i] = src[i];
+		if (s1[i] != s2[i])
+			break ;
 		i++;
 	}
-	dst[i] = '\0';
-	while (src[i] != '\0')
-		i++;
-	return (i);
+	if (i == n)
+		return (0);
+	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }
