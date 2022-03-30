@@ -1,19 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: suhyoon <suhyoon@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/30 19:27:19 by suhyoon           #+#    #+#             */
-/*   Updated: 2022/03/30 20:59:06 by suhyoon          ###   ########.fr       */
+/*   Created: 2022/03/30 20:51:05 by suhyoon           #+#    #+#             */
+/*   Updated: 2022/03/30 20:59:43 by suhyoon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
-void	ft_putchar_fd(char c, int fd)
+void	ft_putstr_fd(char *s, int fd)
 {
-	if (fd < 0)
+	if (!s || fd < 0)
 		return ;
-	write(fd, &c, 1);
+	write(fd, s, ft_strlen(s));
 }
