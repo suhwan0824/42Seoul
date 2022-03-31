@@ -1,24 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: suhyoon <suhyoon@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/17 17:06:20 by suhyoon           #+#    #+#             */
-/*   Updated: 2022/03/31 15:50:00 by suhyoon          ###   ########.fr       */
+/*   Created: 2022/03/31 21:18:01 by suhyoon           #+#    #+#             */
+/*   Updated: 2022/03/31 21:46:07 by suhyoon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-void	*ft_calloc(size_t count, size_t size)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	size_t	i;
-	void	*ptr;
+	t_list	*ptr;
+	t_list	*tmp;
 
-	ptr = malloc(count * size);
-	if (!ptr)
+	if (!lst || !f)
 		return (0);
-	ft_bzero(ptr, (count * size));
+	ptr = 0;
+	while (lst)
+	{
+		tmp = ft_lstnew(f(lst -> content));
+		if (!tmp)
+		{
+			ft_lstclear(&ptr, del);
+			return (0);
+		}
+		ft_lstadd_back(&ptr, tmp);
+		tmp = tmp -> next;
+		lst = lst -> next;
+	}
 	return (ptr);
 }

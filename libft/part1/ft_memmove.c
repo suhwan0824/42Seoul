@@ -6,7 +6,7 @@
 /*   By: suhyoon <suhyoon@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 17:02:48 by suhyoon           #+#    #+#             */
-/*   Updated: 2022/03/29 16:41:49 by suhyoon          ###   ########.fr       */
+/*   Updated: 2022/03/31 21:53:40 by suhyoon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,9 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 
 	dest = (char *)dst;
 	source = (const char *)src;
-
 	if (dst == src)
 		return (dst);
-	elif (dst < src)
+	else if (dst < src)
 	{
 		while (len--)
 			*dest++ = *source++;

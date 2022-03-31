@@ -6,7 +6,7 @@
 /*   By: suhyoon <suhyoon@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 16:47:02 by suhyoon           #+#    #+#             */
-/*   Updated: 2022/03/28 14:11:33 by suhyoon          ###   ########.fr       */
+/*   Updated: 2022/03/31 16:08:06 by suhyoon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,10 @@ int	first(char *str, int *i_ptr)
 
 int	ft_atoi(const char *str)
 {
-	char	*n_str
-	int		result;
-	int		sign;
-	int		i;
+	char			*n_str
+	long long		result;
+	int				sign;
+	int				i;
 
 	n_str = (char *)str;
 	result = 0;

@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: suhyoon <suhyoon@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/17 17:06:20 by suhyoon           #+#    #+#             */
-/*   Updated: 2022/03/31 15:50:00 by suhyoon          ###   ########.fr       */
+/*   Created: 2022/03/31 19:51:49 by suhyoon           #+#    #+#             */
+/*   Updated: 2022/03/31 20:25:23 by suhyoon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-void	*ft_calloc(size_t count, size_t size)
-{
-	size_t	i;
-	void	*ptr;
+#include "libft.h"
 
-	ptr = malloc(count * size);
-	if (!ptr)
+t_list	*ft_lstnew(void *content)
+{
+	t_list	*new;
+
+	new = (t_list *)malloc(sizeof(t_list));
+	if (!new)
 		return (0);
-	ft_bzero(ptr, (count * size));
-	return (ptr);
+	new -> next = NULL;
+	new -> content = content;
+	return (new);
 }
