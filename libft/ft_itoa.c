@@ -5,54 +5,51 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: suhyoon <suhyoon@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/30 15:10:57 by suhyoon           #+#    #+#             */
-/*   Updated: 2022/03/30 18:06:41 by suhyoon          ###   ########.fr       */
+/*   Created: 2022/04/06 19:34:30 by suhyoon           #+#    #+#             */
+/*   Updated: 2022/04/06 19:39:33 by suhyoon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-int	get_len(long long n)
+int	get_len(int n)
 {
 	int	cnt;
 
 	cnt = 0;
-	if (n < 0)
+	if (n <= 0)
+		cnt++;
+	while (n)
 	{
-		cnt += 1;
-		n *= -1;
-	}
-	while (n > 0)
-	{
-		n /= 10;
-		cnt += 1;
+		cnt++;
+		n = n / 10;
 	}
 	return (cnt);
 }
 
 char	*ft_itoa(int n)
 {
-	long long	num;
 	int			len;
 	char		*res;
+	long long	num;
 
-	num = (long long)n;
 	len = get_len(n);
+	num = (long long)n;
 	res = (char *)malloc(sizeof(char) * (len + 1));
 	if (!res)
 		return (0);
 	if (num < 0)
 	{
 		res[0] = '-';
-		num *= -1;
+		num = -1 * num;
 	}
-	res[len] = '\0';
-	while (len >= 0)
+	if (n == 0)
+		res[0] = '0';
+	res[len--] = '\0';
+	while (num)
 	{
-		len--;
-		if (len == 0 && res[len] == '-')
-			continue ;
 		res[len] = num % 10 + '0';
-		num /= 10;
+		len--;
+		num = num / 10;
 	}
 	return (res);
 }

@@ -6,7 +6,7 @@
 /*   By: suhyoon <suhyoon@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 17:05:57 by suhyoon           #+#    #+#             */
-/*   Updated: 2022/04/04 21:01:27 by suhyoon          ###   ########.fr       */
+/*   Updated: 2022/04/06 20:47:57 by suhyoon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ char	*ft_strnstr(const char *bag, const char *one, size_t len)
 		size = b_len;
 	while (size-- >= o_len)
 	{
-		if(ft_memcmp(bag, one, o_len) == 0)
+		if (ft_memcmp(bag, one, o_len) == 0)
 			return ((char *)bag);
 		bag++;
 	}

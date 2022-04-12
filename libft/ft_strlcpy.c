@@ -6,7 +6,7 @@
 /*   By: suhyoon <suhyoon@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 17:02:58 by suhyoon           #+#    #+#             */
-/*   Updated: 2022/04/04 19:38:45 by suhyoon          ###   ########.fr       */
+/*   Updated: 2022/04/06 20:47:41 by suhyoon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	size_t	j;
 
 	j = 0;
-	while(src[j] != '\0')
+	while (src[j] != '\0')
 		j++;
 	if (dstsize == 0)
 		return (j);

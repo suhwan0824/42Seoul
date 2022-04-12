@@ -6,10 +6,9 @@
 /*   By: suhyoon <suhyoon@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 18:43:04 by suhyoon           #+#    #+#             */
-/*   Updated: 2022/04/04 22:01:41 by suhyoon          ###   ########.fr       */
+/*   Updated: 2022/04/07 21:20:47 by suhyoon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #ifndef LIBFT_H
 # define LIBFT_H
 

@@ -6,7 +6,7 @@
 /*   By: suhyoon <suhyoon@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 20:31:26 by suhyoon           #+#    #+#             */
-/*   Updated: 2022/03/31 20:49:00 by suhyoon          ###   ########.fr       */
+/*   Updated: 2022/04/12 10:47:27 by suhyoon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,5 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 		*lst = new;
 		return ;
 	}
-	new -> next = ptr -> next;
 	ptr -> next = new;
 }

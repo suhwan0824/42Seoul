@@ -6,11 +6,9 @@
 /*   By: suhyoon <suhyoon@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 16:47:02 by suhyoon           #+#    #+#             */
-/*   Updated: 2022/04/04 21:16:40 by suhyoon          ###   ########.fr       */
+/*   Updated: 2022/04/07 17:24:21 by suhyoon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-
 
 int	first(char *str, int *i_ptr)
 {
@@ -40,6 +38,7 @@ int	ft_atoi(const char *str)
 {
 	char			*n_str;
 	long long		result;
+	long long		tmp;
 	int				sign;
 	int				i;
 
@@ -49,9 +48,11 @@ int	ft_atoi(const char *str)
 	sign = first(n_str, &i);
 	if (sign == 0)
 		return (0);
+	tmp = 0;
 	while (n_str[i] >= '0' && n_str[i] <= '9')
 	{
-		result = (result * 10) + n_str[i] - '0';
+		tmp = (result * 10) + n_str[i] - '0';
+		result = tmp;
 		i++;
 	}
 	result *= sign;
