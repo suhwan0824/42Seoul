@@ -15,10 +15,10 @@
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	char		*dest;
-	const char	*source;
+	char		*source;
 
 	dest = (char *)dst;
-	source = (const char *)src;
+	source = (char *)src;
 	if (dst == src)
 		return (dst);
 	else if (dst < src)

@@ -10,6 +10,15 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+int	check_flow(long long a, long long b)
+{
+    if (a > 0 && b < 0)
+	return (1);
+    else if (a < 0 && b > 0)
+	return (2);
+    return (0);
+}
+
 int	first(char *str, int *i_ptr)
 {
 	int	success;
@@ -39,8 +48,8 @@ int	ft_atoi(const char *str)
 	char			*n_str;
 	long long		result;
 	long long		tmp;
-	int				sign;
-	int				i;
+	int			sign;
+	int			i;
 
 	n_str = (char *)str;
 	result = 0;
@@ -51,9 +60,13 @@ int	ft_atoi(const char *str)
 	tmp = 0;
 	while (n_str[i] >= '0' && n_str[i] <= '9')
 	{
-		tmp = (result * 10) + n_str[i] - '0';
-		result = tmp;
-		i++;
+	    tmp = (result * 10) + n_str[i] - '0';
+	    if (check_flow(sign * result, sign * tmp) == 1)
+		return (-1);
+	    if (check_flow(sign * result, sign * tmp) == 2)
+		return (0);
+	    result = tmp;
+	    i++;
 	}
 	result *= sign;
 	return (result);

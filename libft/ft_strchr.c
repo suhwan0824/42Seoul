@@ -21,9 +21,9 @@ char	*ft_strchr(const char *s, int c)
 	t_s = (char *)s;
 	while (t_s[i] != t_c)
 	{
-		if (t_s[i] == '\0')
-			return (0);
-		i++;
+	    if (t_s[i] == '\0')
+		return (0);
+	    i++;
 	}
 	return (&t_s[i]);
 }
